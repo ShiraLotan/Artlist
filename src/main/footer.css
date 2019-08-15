@@ -1,0 +1,29 @@
+.footer{
+  height: 50px;
+  background-color: #171717;
+  text-align: center;
+}
+
+.socialIcon{
+  height: 18px;
+  width: 18px;
+  display: inline-block;
+  background-color: white;
+  border-radius: 2px;
+  margin:18px 10px;
+}
+.insta{
+  background: none;
+}
+.allSocial{
+  position: relative;
+  left:420px;
+  float:right;
+}
+.artmail{
+  position: relative;
+  top:15px;
+  left:65px;
+  color:white;
+  font-size: 12px;
+}

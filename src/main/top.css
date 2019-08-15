@@ -1,0 +1,43 @@
+.top{
+  height: 100%;
+  background-color: #daabaa;
+  text-align: right;
+  font-family: 'Raleway', sans-serif;
+
+}
+.topCont{
+  display: inline-block;
+  color:white;
+  font-size: 24px;
+  text-align: left;
+  position: absolute;
+  top: 40%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+  margin:0;
+  padding: 0;
+}
+.header{
+  width:55%;
+}
+.secondRow{
+  font-weight: 300;
+  font-size: 16px;
+  width: 45%;
+  position: relative;
+  bottom: 20px;
+}
+.downloadButton{
+  border-radius: 50%;
+  height: 40px;
+  width:40px;
+  background-color: transparent;
+  border: .5px white solid; 
+  position: relative;
+  left:20%;
+ 
+}
+.arrow{
+  width:15px;
+  height:15px;
+}

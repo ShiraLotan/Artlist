@@ -1,0 +1,42 @@
+.bottom{
+  background-color: #5b617b;
+  height:534px;
+  font-family: 'Raleway', sans-serif;
+}
+.diskImage{
+  z-index: 10;
+  float: right;
+  width:600px;
+  height:450px;
+  margin:50px 0;
+}
+.bottomSecContent{
+  position: relative;
+  left:150px;
+  top:115px;
+  display: inline-block;
+  color:white;
+  text-align: left;
+  font-size:18px;
+}
+ul{
+  list-style: none;
+  position: relative;
+  right:55px;
+}
+li{
+  font-size: 14px;
+  font-weight: 400;
+}
+.checkmark{
+  width:17px;
+  margin:1px 13px;
+}
+.startNow{
+  height:37px !important;
+  background-color: #fcd933 !important;
+  border: .5px gray solid;
+  font-family: 'Raleway', sans-serif !important;
+  padding: 0 20px !important;
+  margin: 20px 0 !important;
+}
