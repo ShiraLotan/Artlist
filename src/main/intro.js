@@ -4,6 +4,7 @@ import Top from './top';
 import Middle from './middle';
 import Bottom from './bottom';
 import Footer from './footer';
+import Details from '../bio/details';
 
 
 
@@ -15,6 +16,7 @@ function Intro() {
         <Middle/>
         <Bottom/>
         <Footer/>
+        <Details/>
       </Container>
     
     </div>

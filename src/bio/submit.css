@@ -1,0 +1,27 @@
+.submit{
+  width:50%;
+  height:100%;
+  background-color: rgb(54, 54, 54);
+  font-family: 'Raleway', sans-serif;
+}
+.submitForm{
+text-align: center;}
+.selectInp{
+  width:400px !important;
+  font-family: 'Raleway', sans-serif !important;
+}
+.menuItem{
+position: relative;
+left:60px;
+}
+.textField{
+  width:400px !important;
+  display: block;
+}
+.choice{
+  display:inline-block;
+}
+.choiceheader{
+  display:inline-block;
+
+}

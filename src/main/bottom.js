@@ -4,6 +4,12 @@ import check from '../img/checkmark.png';
 import Fab from '@material-ui/core/Fab';
 import './bottom.css';
 
+
+
+const openModal =()=>
+{
+}
+
 function Bottom() {
   
   return (
@@ -15,7 +21,7 @@ function Bottom() {
           <li><img className='checkmark' src={check} alt='#'/>The music can be used on any platform worldwide.</li>
           <li><img className='checkmark' src={check} alt='#'/>Your press kit is complete with photos, bio and great music.</li>
         </ul>
-        <Fab className='startNow' variant="extended"  >
+        <Fab onClick={openModal} className='startNow' variant="extended"  >
           Start Now
         </Fab>  
       </div>
