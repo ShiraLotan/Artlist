@@ -7,7 +7,7 @@ import Slide from '@material-ui/core/Slide';
 import Submit from '../bio/submit';
 import './details.css';
 import Upload from './upload';
-
+import a from '../img/a.png';
 
 const Transition = React.forwardRef(function Transition(props, ref) {
     return <Slide direction="up" ref={ref} {...props} />;
@@ -29,11 +29,11 @@ function handleClickOpen() {
   return (
     <div className="footer">
        <Button variant="outlined" color="primary" onClick={handleClickOpen}>
-        Open full-screen dialog
+        Start Now
       </Button>
       <Dialog fullScreen open={open} onClose={handleClose} TransitionComponent={Transition}>
-            <IconButton edge="start" color="inherit" onClick={handleClose} aria-label="close">
-              <CloseIcon />
+            <IconButton className='closeModal' onClick={handleClose} >
+                <CloseIcon />
             </IconButton>
         <Submit/>
         <Upload/>

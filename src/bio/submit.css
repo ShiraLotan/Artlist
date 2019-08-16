@@ -3,6 +3,7 @@
   height:100%;
   background-color: rgb(54, 54, 54);
   font-family: 'Raleway', sans-serif;
+  color:white;
 }
 .submitForm{
 text-align: center;}
@@ -17,11 +18,50 @@ left:60px;
 .textField{
   width:400px !important;
   display: block;
+  border-color: white;
 }
 .choice{
   display:inline-block;
+  position: relative;
+  margin:5px;
+  left:120px;
 }
 .choiceheader{
   display:inline-block;
-
+  font-size: 12px;
 }
+.headFoot{
+  position: relative;
+  left:140px;
+}
+input[type="radio"] {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+.choice label:before {
+  content: "";
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  margin-right: 0.5em;
+  border-radius: 100%;
+  vertical-align: -3px;
+  border: .5px solid rgb(250, 247, 247);
+  padding: 0.13em;
+  background-color: transparent;
+  background-clip: content-box;
+}
+.choice input:checked {
+  background-color: #3dbfef;
+  border-color: #3dbfef;
+}
+label{
+  font-size: 12px;
+}
+

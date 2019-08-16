@@ -1,30 +1,22 @@
 import React from 'react';
 import './submit.css';
 import TextField from '@material-ui/core/TextField';
-import { makeStyles } from '@material-ui/core/styles';
 import MenuItem from '@material-ui/core/MenuItem';
 import Popover from '@material-ui/core/Popover';
 import Typography from '@material-ui/core/Typography';
+import { withStyles, makeStyles } from "@material-ui/core/styles";
 
+const styles = {
+  root: {
+  }
+}
 const useStyles = makeStyles(theme => ({
-  container: {
-    display: 'flex',
-    flexWrap: 'wrap',
-  },
-  textField: {
-    display: 'block',
-    marginLeft: theme.spacing(1),
-    marginRight: theme.spacing(1),
-    width: '400px'
-  },
-  dense: {
-    marginTop: theme.spacing(2),
-  },
   popover: {
     pointerEvents: 'none',
   },
   paper: {
     padding: theme.spacing(1),
+    backgroundColor: 'transparent',
   },
 }));
 
@@ -42,9 +34,12 @@ const types = [
 
 ];
 
-function Submit() {
+function Submit(props) {
+  const { classes } = props;
+  const classes1 = useStyles();
 
-  const classes = useStyles();
+
+
   const [country, setCountry] = React.useState({
     name: '',
   });
@@ -75,25 +70,31 @@ function Submit() {
 
   return (
     <div className="submit">
-      <h1>Submit your music</h1>
+      <h1 className='headFoot'>Submit your music</h1>
       <div className='submitForm'>
+
       <TextField
-        className='textField '
+        InputProps={{
+          className: classes.root
+        }}
+        className='textField'
         label="Full name"
         margin="dense"
         variant="outlined"
         multiline
         rowsMax="4"
       />
+
       <TextField
         id="outlined-dense-multiline"
-        className='textField '
+        className='textField'
         label="E-mail"
         margin="dense"
         variant="outlined"
         multiline
         rowsMax="4"
       />
+
         <TextField
         id="outlined-select-currency"
         select
@@ -111,7 +112,7 @@ function Submit() {
         ))}
       </TextField>
       
-        <TextField
+      <TextField
         id="outlined-multiline-static"
         aria-owns={open ? 'mouse-over-popover' : undefined}
         aria-haspopup="true"
@@ -126,9 +127,9 @@ function Submit() {
       />
        <Popover
         id="mouse-over-popover"
-        className={classes.popover} 
+        className={classes1.popover} 
         classes={{
-          paper: classes.paper,
+          paper: classes1.paper,
         }}
         open={open}
         anchorEl={anchorEl}
@@ -172,16 +173,15 @@ function Submit() {
       />
      
       </div>
-      <div className='radioBut'>
-      <h4 className='choiceheader'>Are you registered with a PRO?</h4>
+      <div className='radioBut headFoot'>
+      <h4 className='choiceheader '>Are you registered with a PRO?</h4>
         <div className='choice'>
           <input type="radio" name="pro" value="yes"
                 />
           <label >Yes</label>
         </div>
-
          <div className='choice'>
-          <input type="radio" name="pro" value="no"/>
+          <input className='radioinp' type="radio" name="pro" value="no"/>
           <label >No</label>
          </div>
        </div>
@@ -189,4 +189,4 @@ function Submit() {
   );
 }
 
-export default Submit;
+export default withStyles(styles)(Submit);
