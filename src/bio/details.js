@@ -35,7 +35,7 @@ function handleClickOpen() {
     <div className="details">
       
       <Fab color="primary" onClick={handleClickOpen}  className='startNow' variant="extended"  >
-          Start Now
+         Start Now
     </Fab> 
       <Dialog className={classes.Dialog} fullScreen open={open} onClose={handleClose} TransitionComponent={Transition}>
           <div className='dialogContent'>

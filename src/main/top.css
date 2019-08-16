@@ -3,7 +3,6 @@
   background-color: #daabaa;
   text-align: right;
   font-family: 'Raleway', sans-serif;
-
 }
 .topCont{
   display: inline-block;
@@ -35,9 +34,15 @@
   border: .5px white solid; 
   position: relative;
   left:20%;
- 
 }
 .arrow{
   width:15px;
   height:15px;
+}
+.topimage{
+  position: relative;
+  top:4px;
+  left:31px;
+  height:544px;
+  width:550px;
 }

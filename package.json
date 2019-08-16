@@ -7,9 +7,11 @@
     "@material-ui/icons": "^4.2.1",
     "@material-ui/styles": "^4.3.0",
     "@uppy/drag-drop": "^1.2.0",
+    "jss": "^9.8.7",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-dropzone": "^10.1.7",
+    "react-jss": "^8.6.1",
     "react-scripts": "3.1.1"
   },
   "scripts": {

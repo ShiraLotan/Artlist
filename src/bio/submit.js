@@ -3,13 +3,11 @@ import TextField from '@material-ui/core/TextField';
 import MenuItem from '@material-ui/core/MenuItem';
 import Popover from '@material-ui/core/Popover';
 import Typography from '@material-ui/core/Typography';
-import { withStyles, makeStyles } from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles";
+import injectSheet from 'react-jss';
 import './submit.css';
 
-const styles = {
-  root: {
-  }
-}
+
 const useStyles = makeStyles(theme => ({
   popover: {
     pointerEvents: 'none',
@@ -20,6 +18,16 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
+const styles = {
+  papper: {
+    boxShadow: 'none',
+    backgroundColor: 'transparent'
+    },
+    gridSec:{
+      width: '100px'
+    }
+  
+}
 const countries = [
   {name: 'Israel'},
   {name: 'USA'},
@@ -33,9 +41,8 @@ const types = [
   {name: 'Musician'}
 
 ];
+const Submit = ({ classes, children }) => {
 
-function Submit(props) {
-  const { classes } = props;
   const classes1 = useStyles();
 
 
@@ -191,5 +198,5 @@ function Submit(props) {
     </div>
   );
 }
+export default injectSheet(styles)(Submit)
 
-export default withStyles(styles)(Submit);

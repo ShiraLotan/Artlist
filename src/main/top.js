@@ -16,7 +16,7 @@ function Top() {
                 <img className='arrow' src={arrow} alt='#'/>
             </button>
         </div>
-        <img src={topImg} alt='#'/>
+        <img className='topimage' src={topImg} alt='#'/>
         
       </Container>
     
