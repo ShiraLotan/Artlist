@@ -1,14 +1,8 @@
 import React from 'react';
 import disk from '../img/disk.png';
 import check from '../img/checkmark.png';
-import Fab from '@material-ui/core/Fab';
+import Details from '../bio/details';
 import './bottom.css';
-
-
-
-const openModal =()=>
-{
-}
 
 function Bottom() {
   
@@ -21,9 +15,8 @@ function Bottom() {
           <li><img className='checkmark' src={check} alt='#'/>The music can be used on any platform worldwide.</li>
           <li><img className='checkmark' src={check} alt='#'/>Your press kit is complete with photos, bio and great music.</li>
         </ul>
-        <Fab onClick={openModal} className='startNow' variant="extended"  >
-          Start Now
-        </Fab>  
+        <Details/>
+ 
       </div>
       <img className='diskImage' src={disk} alt='#'/>
     </div>

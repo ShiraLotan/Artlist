@@ -1,8 +1,26 @@
 .details{
-    display: inline-block;
-    background-color: rgba(0,0,0,.0001) !important;
+ display: inline-block;
+
+}
+.startNow{
+    height:37px !important;
+    background-color: #fcd933 !important;
+    border: .5px gray solid !important;
+    color: black !important;
+    font-family: 'Raleway', sans-serif !important;
+    padding: 0 20px !important;
+    margin: 20px 0 !important;
 }
 .closeModal{
-    width:40px;
     float: left;
+    background-color: #181818 !important;
+    
+}
+.dialogContent{
+    height:100%;
+    background-color: #181818;
+}
+.closeModalBut{
+width: 20px;
+height:20px;
 }

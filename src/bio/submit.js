@@ -1,10 +1,10 @@
 import React from 'react';
-import './submit.css';
 import TextField from '@material-ui/core/TextField';
 import MenuItem from '@material-ui/core/MenuItem';
 import Popover from '@material-ui/core/Popover';
 import Typography from '@material-ui/core/Typography';
 import { withStyles, makeStyles } from "@material-ui/core/styles";
+import './submit.css';
 
 const styles = {
   root: {
@@ -16,7 +16,7 @@ const useStyles = makeStyles(theme => ({
   },
   paper: {
     padding: theme.spacing(1),
-    backgroundColor: 'transparent',
+    backgroundColor: '#181818',
   },
 }));
 
@@ -70,6 +70,7 @@ function Submit(props) {
 
   return (
     <div className="submit">
+      <div className='all'>
       <h1 className='headFoot'>Submit your music</h1>
       <div className='submitForm'>
 
@@ -125,27 +126,28 @@ function Submit(props) {
         margin="normal"
         variant="outlined"
       />
-       <Popover
-        id="mouse-over-popover"
-        className={classes1.popover} 
-        classes={{
-          paper: classes1.paper,
-        }}
-        open={open}
-        anchorEl={anchorEl}
-        anchorOrigin={{
-          vertical: 'bottom',
-          horizontal: 'left',
-        }}
-        transformOrigin={{
-          vertical: 'top',
-          horizontal: 'left',
-        }}
-        onClose={handlePopoverClose}
-        disableRestoreFocus
-      >
-        <Typography>Let us know who you are <br></br>and where you're coming from, <br></br>what inspires you, who you<br></br>have worked with and what <br></br>you think is interesting about <br></br>your work in the world of music <br></br>and film, etc. How should we <br></br>presented you as an artist?</Typography>
-      </Popover>
+        <Popover
+          id="mouse-over-popover"
+          className={classes1.popover} 
+          classes={{
+            paper: classes1.paper,
+          }}
+          open={open}
+          anchorEl={anchorEl}
+          anchorOrigin={{
+            vertical: 'bottom',
+            horizontal: 'left',
+          }}
+          transformOrigin={{
+            vertical: 'top',
+            horizontal: 'left',
+          }}
+          onClose={handlePopoverClose}
+          disableRestoreFocus
+        >
+          <Typography className='popText'>Let us know who you are <br></br>and where you're coming from, <br></br>what inspires you, who you<br></br>have worked with and what <br></br>you think is interesting about <br></br>your work in the world of music <br></br>and film, etc. How should we <br></br>presented you as an artist?</Typography>
+        </Popover>
+        
         <TextField
         id="outlined-select-currency"
         select
@@ -184,6 +186,7 @@ function Submit(props) {
           <input className='radioinp' type="radio" name="pro" value="no"/>
           <label >No</label>
          </div>
+        </div>
        </div>
     </div>
   );

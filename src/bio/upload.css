@@ -1,4 +1,90 @@
 .upload{
-  width:50%;
   height:100%;
+  color: white;
+  font-family: 'Raleway', sans-serif;
+  position: relative;
+  top: 140px;
+  width: 48%;
+  margin-right:0;
+  padding: 0;
+  float:right;
+}
+.dragNdrop{
+  height: 170px;
+  border: 1px white dashed;
+  width: 55%;
+  margin: auto;
+}
+.dragNdropContent{
+text-align: center;
+font-weight: 500;
+
+}
+.clickToUpload{
+  color:#c5ab14;
+  font-weight: 700;
+}
+.format{
+  text-align: center;
+  font-size: 10px;
+}
+.headUplaod{
+  font-size: 15px;
+  position: relative;
+  left:155px;  
+  margin: 10px 0;
+}
+.numSongs{
+  font-size: 12px;
+  font-weight: 500;
+  color: rgb(173, 173, 173);
+}
+.totalDragNdropContent{
+  position: relative;
+  top: 50px;
+}
+#checkBoxId {
+  width: 8px;
+  height: 8px;
+  cursor: pointer;
+  background: rgba(40,40,40,0.2);
+  appearance: none;
+  border: .5px white solid;
+  margin:10px;
+  position: relative;
+  top:10px;
+}
+#checkBoxId:checked:after {
+  position: relative;
+	content: '\2714';
+	font-size: 8px;
+	bottom: 5px;
+	color: #c5ab14;
+}
+#checkBoxId:checked {
+  background: rgba(40,40,40,0.7);
+}
+.checkbox-container {
+  position: relative;
+  left:145px;
+  display: block;  
+  overflow: hidden;
+  font-size: 10px;
+  font-weight: 500;
+  margin: -5px 0;
+}
+.checkBoxArea{
+  margin-top:15px;
+}
+.submitMusic{
+  height:37px !important;
+  background-color: #fcd933 !important;
+  border: .5px gray solid !important;
+  color: black !important;
+  font-family: 'Raleway', sans-serif !important;
+  padding: 0 20px !important;
+  margin: 50px 0 !important;
+  position: relative;
+  left:300px;
+  width: 130px !important;
 }
