@@ -64,23 +64,40 @@ function Submit() {
 
   const classes1 = useStyles();
 
+  const [allDetails , setDetails] = React.useState({
+    name: '',
+    email: '',
+    country: '',
+    bio: '',
+    position: '',
+    portfolio: '',
+    registered: false
+  })
+
   const [country, setCountry] = React.useState({
     name: '',
   });
-
-  const handleCountryChange = event => {
-    setCountry({name: event.target.value });
-  };
 
   const [type, setType] = React.useState({
     name: '',
   });
 
+  const [anchorEl, setAnchorEl] = React.useState(null);
+
+  const handleCountryChange = event => {
+    setCountry({name: event.target.value });
+    setDetails({ [event.target.name]: event.target.value });
+  };
+  
   const handleTypeChange = event => {
     setType({ name: event.target.value });
+    setDetails({ [event.target.name]: event.target.value });
   };
 
-  const [anchorEl, setAnchorEl] = React.useState(null);
+  const handleAllDetails = event => {
+    setDetails({ [event.target.name]: event.target.value });
+  };
+
 
   function handlePopoverOpen(event) {
     setAnchorEl(event.currentTarget.isConnected);
@@ -100,12 +117,14 @@ function Submit() {
 
       <NoSsr>
         <StyledTextField
+          onChange={handleAllDetails}
           className='textField'
           label="Full name"
           margin="dense"
           variant="outlined"
           multiline
           rowsMax="4"
+          name='name'
         />
       </NoSsr>
       <NoSsr>
@@ -118,6 +137,9 @@ function Submit() {
           variant="outlined"
           multiline
           rowsMax="4"
+          name='email'
+          onChange={handleAllDetails}
+
         />
       </NoSsr>
 
@@ -131,6 +153,8 @@ function Submit() {
           className='selectInp '
           margin="normal"
           variant="outlined"
+          name='country'
+
         >
           {countries.map((option,i) => (
             <MenuItem className='menuItem' key={i} value={option.name}>
@@ -147,12 +171,15 @@ function Submit() {
         aria-haspopup="true"
         onMouseEnter={handlePopoverOpen}
         onMouseLeave={handlePopoverClose}
+        onChange={handleAllDetails}
         className='textField '
         label="Bio"
         multiline
         rows="4"
         margin="normal"
         variant="outlined"
+        name='bio'
+
       />
       </NoSsr>
 
@@ -181,6 +208,8 @@ function Submit() {
           className='selectInp '
           margin="normal"
           variant="outlined"
+          name='position'
+
         >
           {types.map((option,i) => (
             <MenuItem className='menuItem' key={i} value={option.name}>
@@ -199,6 +228,9 @@ function Submit() {
           variant="outlined"
           multiline
           rowsMax="4"
+          name='portfolio'
+          onChange={handleAllDetails}
+
         />
      </NoSsr>
 
