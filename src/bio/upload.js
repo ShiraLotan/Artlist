@@ -20,13 +20,40 @@ svg.MuiSvgIcon-root{
 `;
 
 
-function Upload() {
+function Upload(props) {
+  const { passedFormDetails } = props;
+  const [checkBox , setCheckbox ] = React.useState({
+    rights:false,
+    noCover: false,
+    forUse: false
+  })
+
+  const handleCheckbox = (event )=>
+  {
+    setCheckbox({[event.target.name]:event.target.checked})
+  }
+  
+  const [allFiles , setFiles] = React.useState()
 
   const onDrop = useCallback(acceptedFiles => {
-    // Do something with the files
+      const newArrFile = [allFiles,...acceptedFiles]
+      setFiles(newArrFile)
   }, [])
 
   const {getRootProps, getInputProps, isDragActive} = useDropzone({onDrop})
+
+  const fetchDetails = () =>
+  {
+        fetch('http://localhost:3000/add', {
+      method: 'post',
+      headers: {
+        'Accept': 'application/json, text/plain, */*',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({checkBox, allFiles , passedFormDetails})
+    }).then(res=>res.json())
+      .then(res => console.log(res));
+  }
 
   return (
     <div className="upload">
@@ -46,11 +73,11 @@ function Upload() {
 
         <div className='checkBoxArea'>
       
-          <div className='checkbox-container'><NoSsr><StyledCheckbox color = 'default' value="checkedA" inputProps={{'aria-label': 'primary checkbox',}}/></NoSsr>I have full rights for the music.</div>
-          <div className='checkbox-container'><NoSsr><StyledCheckbox color = 'default' value="checkedA" inputProps={{'aria-label': 'primary checkbox',}}/></NoSsr>None of the songs are a cover of another artist's material.</div>
-          <div className='checkbox-container'><NoSsr><StyledCheckbox color = 'default' value="checkedA" inputProps={{'aria-label': 'primary checkbox',}}/></NoSsr>The music is clear for use in any web platform, including YouTube monetization.</div>
+          <div className='checkbox-container'><NoSsr><StyledCheckbox onChange={handleCheckbox} name='rights' color = 'default' value={checkBox.rights} inputProps={{'aria-label': 'primary checkbox',}}/></NoSsr>I have full rights for the music.</div>
+          <div className='checkbox-container'><NoSsr><StyledCheckbox onChange={handleCheckbox} name='noCover' color = 'default' value={checkBox.noCover} inputProps={{'aria-label': 'primary checkbox',}}/></NoSsr>None of the songs are a cover of another artist's material.</div>
+          <div className='checkbox-container'><NoSsr><StyledCheckbox onChange={handleCheckbox} name='forUse' color = 'default' value={checkBox.forUse} inputProps={{'aria-label': 'primary checkbox',}}/></NoSsr>The music is clear for use in any web platform, including YouTube monetization.</div>
         </div>
-        <Fab color="primary"  className='submitMusic' variant="extended" >
+        <Fab onClick={fetchDetails} color="primary"  className='submitMusic' variant="extended" >
           Submit
         </Fab>
     </div>

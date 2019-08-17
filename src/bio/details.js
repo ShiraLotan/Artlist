@@ -14,9 +14,15 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 
  
 
-
 function Details() {
 const [open, setOpen] = React.useState(false);
+
+const [formDetails, setFormDetails] = React.useState({})
+
+function setForm(allDetails)
+{
+  setFormDetails(allDetails)
+}
 
 function handleClickOpen() {
     setOpen(true);
@@ -36,8 +42,8 @@ function handleClickOpen() {
         <div className='dialogContent'>
         <img className='closeModalBut' src={X} alt='#' onClick={handleClose}/>
 
-            <Submit/>
-            <Upload/>
+            <Submit sendDetails ={setForm}/>
+            <Upload passedFormDetails={formDetails}/>
 
         </div>
       </Dialog>

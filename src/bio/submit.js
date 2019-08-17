@@ -1,4 +1,4 @@
-import React from 'react';
+import React ,{ Component } from 'react';
 import MenuItem from '@material-ui/core/MenuItem';
 import Popover from '@material-ui/core/Popover';
 import Typography from '@material-ui/core/Typography';
@@ -60,64 +60,47 @@ const types = [
   {name: 'Musician'}
 
 ];
-function Submit() {
 
-  const classes1 = useStyles();
+class Submit extends Component {
 
-  const [allDetails , setDetails] = React.useState({
-    name: '',
-    email: '',
-    country: '',
-    bio: '',
-    position: '',
-    portfolio: '',
-    registered: false
-  })
+state ={
+  name: '',
+  email: '',
+  country: '',
+  bio: '',
+  position: '',
+  portfolio: '',
+  registered: false,
+  anchorEl: null
+}
 
-  const [country, setCountry] = React.useState({
-    name: '',
-  });
+classes1 =()=> useStyles();
 
-  const [type, setType] = React.useState({
-    name: '',
-  });
-
-  const [anchorEl, setAnchorEl] = React.useState(null);
-
-  const handleCountryChange = event => {
-    setCountry({name: event.target.value });
-    setDetails({ [event.target.name]: event.target.value });
-  };
-  
-  const handleTypeChange = event => {
-    setType({ name: event.target.value });
-    setDetails({ [event.target.name]: event.target.value });
-  };
-
-  const handleAllDetails = event => {
-    setDetails({ [event.target.name]: event.target.value });
-  };
-
-
-  function handlePopoverOpen(event) {
-    setAnchorEl(event.currentTarget.isConnected);
+ handlePopoverOpen=(event)=> {
+  this.setState({anchorEl:event.currentTarget.isConnected});
   }
 
-  function handlePopoverClose() {
-    setAnchorEl(null);
+ handlePopoverClose=()=> {
+  this.setState({anchorEl:null});
   }
+open(){ 
+  return Boolean(this.state.anchorEl);
+}
+handleAllDetails=(event)=>
+{
+  this.setState({[event.target.name]: event.target.value})
+  this.props.sendDetails(this.state)
+}
 
-  const open = Boolean(anchorEl);
-
-  return (
-    <div className="submit">
+  render() {
+  return (<div className="submit">
       <div className='all'>
       <h1 className='headFoot'>Submit your music</h1>
       <div className='submitForm'>
 
       <NoSsr>
         <StyledTextField
-          onChange={handleAllDetails}
+          onChange={this.handleAllDetails}
           className='textField'
           label="Full name"
           margin="dense"
@@ -138,7 +121,7 @@ function Submit() {
           multiline
           rowsMax="4"
           name='email'
-          onChange={handleAllDetails}
+          onChange={this.handleAllDetails}
 
         />
       </NoSsr>
@@ -148,8 +131,8 @@ function Submit() {
           id="outlined-select-currency"
           select
           label="Country"
-          value={country.name}
-          onChange={handleCountryChange}
+          value={this.state.country}
+          onChange={this.handleAllDetails}
           className='selectInp '
           margin="normal"
           variant="outlined"
@@ -167,11 +150,11 @@ function Submit() {
       <NoSsr>
       <StyledTextField
         id="outlined-multiline-static"
-        aria-owns={open ? 'mouse-over-popover' : undefined}
+        aria-owns={this.state.anchorEl ? 'mouse-over-popover' : undefined}
         aria-haspopup="true"
-        onMouseEnter={handlePopoverOpen}
-        onMouseLeave={handlePopoverClose}
-        onChange={handleAllDetails}
+        onMouseEnter={this.handlePopoverOpen}
+        onMouseLeave={this.handlePopoverClose}
+        onChange={this.handleAllDetails}
         className='textField '
         label="Bio"
         multiline
@@ -185,14 +168,14 @@ function Submit() {
 
         <Popover
           id="mouse-over-popover"
-          className={classes1.popover} 
+          className={this.classes1.popover} 
           classes={{
-            paper: classes1.paper,
+            paper: this.classes1.paper,
           }}
           anchorOrigin={{vertical:'center',horizontal: 550}}
-          open={open}
-          anchorEl={anchorEl}
-          onClose={handlePopoverClose}
+          open={this.open | undefined }
+          anchorEl={!this.state.anchorEl }
+          onClose={this.handlePopoverClose}
           disableRestoreFocus
         >
           <Typography className='popText'>Let us know who you are <br></br>and where you're coming from, <br></br>what inspires you, who you<br></br>have worked with and what <br></br>you think is interesting about <br></br>your work in the world of music <br></br>and film, etc. How should we <br></br>presented you as an artist?</Typography>
@@ -203,8 +186,8 @@ function Submit() {
           id="outlined-select-currency"
           select
           label="What do you do?"
-          value={type.name}
-          onChange={handleTypeChange}
+          value={this.state.position}
+          onChange={this.handleAllDetails}
           className='selectInp '
           margin="normal"
           variant="outlined"
@@ -229,7 +212,7 @@ function Submit() {
           multiline
           rowsMax="4"
           name='portfolio'
-          onChange={handleAllDetails}
+          onChange={this.handleAllDetails}
 
         />
      </NoSsr>
@@ -238,17 +221,18 @@ function Submit() {
       <div className='radioBut headFoot'>
       <h4 className='choiceheader '>Are you registered with a PRO?</h4>
         <div className='choice'>
-           <input className='radioinp' type="radio" name="pro" value="yes"/>
+           <input onChange={this.handleAllDetails} className='radioinp' type="radio" name="registered" value="true"/>
           <label className='choiceCont'>Yes</label>
         </div>
          <div className='choice'>
-           <input className='radioinp' type="radio" name="pro" value="no"/>
+           <input onChange={this.handleAllDetails} className='radioinp' type="radio" name="registered" value="false"/>
           <label className='choiceCont'>No</label>
          </div>
         </div>
        </div>
     </div>
-  );
+    );
+  }
 }
 export default Submit
 
