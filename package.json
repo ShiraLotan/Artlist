@@ -12,7 +12,8 @@
     "react-dom": "^16.9.0",
     "react-dropzone": "^10.1.7",
     "react-jss": "^8.6.1",
-    "react-scripts": "3.1.1"
+    "react-scripts": "3.1.1",
+    "styled-components": "^4.3.2"
   },
   "scripts": {
     "start": "react-scripts start",

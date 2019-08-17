@@ -1,6 +1,6 @@
 .submit{
   width:48%;
-  height:100%;
+  height:82%;
   background-color: rgb(54, 54, 54);
   font-family: 'Raleway', sans-serif;
   margin-top: 80px;
@@ -18,8 +18,6 @@
 text-align: center;}
 .selectInp{
   width:350px !important;
-  font-family: 'Raleway', sans-serif !important;
-
 }
 .menuItem{
 position: relative;
@@ -27,13 +25,12 @@ left:60px;
 }
 .textField{
   width:350px !important;
-  border-color: white;
 }
 .choice{
   display:inline-block;
   position: relative;
   margin:5px;
-  left:120px;
+  left:78px;
 }
 .choiceheader{
   display:inline-block;
@@ -41,40 +38,40 @@ left:60px;
 }
 .headFoot{
   position: relative;
-  right: 30px;
-  width:290px;
+  right: 24px;
+  width:300px;
   margin:auto;
   margin-bottom: 10px;
-  padding-top: 15px;
+  padding-top: 10px;
 }
-input[type="radio"] {
-  border: 0;
-  clip: rect(0 0 0 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px;
+.radioinp
+{
+     -webkit-appearance: none;
+     -moz-appearance: none;
+     appearance: none;
+     display: inline-block;
+     position: relative;
+     top:4px;
+     background-color: transparent;
+     color: #666;
+     height: 15px;
+     width: 15px;
+     border: 0.5px white solid;
+     border-radius: 50px;
+     cursor: pointer;     
+     margin-right: 7px;
+     outline: none;
 }
-.choice label:before {
-  content: "";
-  display: inline-block;
-  width: 1em;
-  height: 1em;
-  margin-right: 0.5em;
-  border-radius: 100%;
-  vertical-align: -3px;
-  border: .5px solid rgb(250, 247, 247);
-  padding: 0.13em;
-  background-color: transparent;
-  background-clip: content-box;
+.radioinp:checked::before
+{
+     position: absolute;
+     font: 13px/1 'Open Sans', sans-serif;
+     color:#fcd933;
+     left: 4px;
+     content: '\02143';
+     transform: rotate(40deg);
 }
-.choice input:checked {
-  background-color: #3dbfef;
-  border-color: #3dbfef;
-}
-label{
+.choiceCont{
   font-size: 12px;
 }
 .popText{
@@ -85,7 +82,5 @@ label{
   border-radius: 4px !important;
   font-family: 'Raleway', sans-serif !important;
 }
-.popWraper{
-  
-}
+
 

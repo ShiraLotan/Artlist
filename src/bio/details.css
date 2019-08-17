@@ -21,8 +21,12 @@
 .dialogContent{
     height:100%;
     background-color: #181818;
+    overflow: hidden !important;
+
 }
 .closeModalBut{
-width: 20px;
-height:20px;
+width: 10px;
+height:10px;
+float:right;
+margin:10px;
 }
