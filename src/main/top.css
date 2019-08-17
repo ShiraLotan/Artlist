@@ -45,6 +45,12 @@
   height:544px;
   width:550px;
 }
+.artlist{
+  position: relative;
+  bottom: 130px;
+  height:20px;
+  right:140px;
+}
 @media only screen and (max-width: 960px) {
   .top{
     height:400px;
