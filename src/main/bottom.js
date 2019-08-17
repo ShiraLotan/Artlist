@@ -1,5 +1,5 @@
 import React from 'react';
-import disk from '../img/disk.png';
+import disk from '../img/disk1.png';
 import check from '../img/checkmark.png';
 import Details from '../bio/details';
 import './bottom.css';

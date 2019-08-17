@@ -1,6 +1,6 @@
 import React from 'react';
 import Container from '@material-ui/core/Container';
-import topImg from '../img/top.png';
+import topImg from '../img/top1.png';
 import arrow from '../img/arrowDown.png';
 
 import './top.css';

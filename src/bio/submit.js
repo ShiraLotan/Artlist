@@ -1,49 +1,8 @@
 import React ,{ Component } from 'react';
 import MenuItem from '@material-ui/core/MenuItem';
-import { makeStyles } from "@material-ui/core/styles";
-import { TextField, NoSsr } from '@material-ui/core';
-import styled from 'styled-components';
-
+import {  NoSsr } from '@material-ui/core';
+import StyledTextField from './submit.Material.style';
 import './submit.css';
-
-const StyledTextField = styled(TextField)`
-textarea.MuiInputBase-input{
-  color:white;
-  font-family: Raleway;
-}
-  label.MuiFormLabel-root{
-    color: white;
-    font-family: Raleway;
-  }
-  label.Mui-focused {
-    color: #c5ab14;
-  }
-  .MuiOutlinedInput-root {
-    fieldset {
-      border-color: white;
-    }
-    &:hover fieldset {
-      border-color: #c5ab14;
-    }
-    &.Mui-focused fieldset {
-      border-color: #c5ab14;
-    }
-  }
-`;
-
-
-const useStyles = makeStyles(theme => ({
-  popover: {
-    pointerEvents: 'none',
-   
-  },
-  paper: {
-    padding: theme.spacing(1),
-    backgroundColor: '#181818',
-  }
-}));
-
-
 
 const countries = [
   {name: 'Israel'},
@@ -72,27 +31,27 @@ state ={
   display: 'none'
 }
 
-classes1 =()=> useStyles();
   
 handleOpenPopove=()=>
 {
-  this.setState({display:'block'})
+  this.setState({display:'block'});
 }
+
 handleClosePopove=()=>
 {
-  this.setState({display:'none'})
-
+  this.setState({display:'none'});
 }
 
 handleAllDetails=(event)=>
 {
-  this.setState({[event.target.name]: event.target.value})
-  this.props.sendDetails(this.state)
+  this.setState({[event.target.name]: event.target.value});
+  this.props.sendDetails(this.state);
 }
 
-  render() {
+render() {
 
-  return (<div className="submit">
+  return (
+      <div className="submit">
       <div className='all'>
       <h1 className='headFoot'>Submit your music</h1>
       <div className='submitForm'>
@@ -200,17 +159,18 @@ handleAllDetails=(event)=>
 
         />
      </NoSsr>
+    </div>
 
-      </div>
-      <div className='radioBut headFoot'>
+
+    <div className='radioBut headFoot'>
       <h4 className='choiceheader '>Are you registered with a PRO?</h4>
-        <div className='choice'>
-           <input onChange={this.handleAllDetails} className='radioinp' type="radio" name="registered" value="true"/>
-          <label className='choiceCont'>Yes</label>
-        </div>
-         <div className='choice'>
-           <input onChange={this.handleAllDetails} className='radioinp' type="radio" name="registered" value="false"/>
-          <label className='choiceCont'>No</label>
+          <div className='choice'>
+            <input onChange={this.handleAllDetails} className='radioinp' type="radio" name="registered" value="true"/>
+            <label className='choiceCont'>Yes</label>
+          </div>
+            <div className='choice'>
+            <input onChange={this.handleAllDetails} className='radioinp' type="radio" name="registered" value="false"/>
+            <label className='choiceCont'>No</label>
          </div>
         </div>
        </div>

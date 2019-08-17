@@ -8,24 +8,11 @@ import Card from '@material-ui/core/Card';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import injectSheet from 'react-jss';
- 
+import styles from './middle.Material.style';
 import './middle.css';
 
 
-
-const styles = {
-  papper: {
-    boxShadow: 'none',
-    backgroundColor: 'transparent'
-    },
-    gridSec:{
-      width: '100px'
-    }
-  
-}
-
-
-const Middle = ({ classes, children }) => {
+const Middle = ({ classes }) => {
  
 
    const artists = [{

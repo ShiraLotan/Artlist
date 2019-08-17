@@ -1,10 +1,10 @@
 import React from 'react';
-import './footer.css';
 import fb from '../img/fb.png';
 import insta from '../img/insta1.jpg';
 import twitter from '../img/twitter.png';
 import vimeo from '../img/vimeo1.png';
 import youtube from '../img/youTube1.png';
+import './footer.css';
 
 
 

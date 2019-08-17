@@ -1,27 +1,15 @@
 import React, {useCallback} from 'react';
 import {useDropzone} from 'react-dropzone'
 import Fab from '@material-ui/core/Fab';
-import Checkbox from '@material-ui/core/Checkbox';
-import styled from 'styled-components';
+import StyledCheckbox from './upload.Material.style';
 import { NoSsr } from '@material-ui/core';
 import './upload.css';
 
 
-const StyledCheckbox = styled(Checkbox)`
-span.MuiIconButton-label{
-  background-color: transparent;
-  color: white;
-  
-}
-svg.MuiSvgIcon-root{
-  height:13px;
-  width: 13px;
-}
-`;
-
-
 function Upload(props) {
+
   const { passedFormDetails } = props;
+
   const [checkBox , setCheckbox ] = React.useState({
     rights:false,
     noCover: false,
@@ -29,9 +17,9 @@ function Upload(props) {
   })
 
   const handleCheckbox = (event )=>
-  {
-    setCheckbox({[event.target.name]:event.target.checked})
-  }
+    {
+      setCheckbox({[event.target.name]:event.target.checked})
+    }
   
   const [allFiles , setFiles] = React.useState()
 
