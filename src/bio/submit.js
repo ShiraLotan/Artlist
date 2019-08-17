@@ -1,7 +1,5 @@
 import React ,{ Component } from 'react';
 import MenuItem from '@material-ui/core/MenuItem';
-import Popover from '@material-ui/core/Popover';
-import Typography from '@material-ui/core/Typography';
 import { makeStyles } from "@material-ui/core/styles";
 import { TextField, NoSsr } from '@material-ui/core';
 import styled from 'styled-components';
@@ -71,13 +69,20 @@ state ={
   position: '',
   portfolio: '',
   registered: false,
-  anchorEl: null,
-  open: false
+  display: 'none'
 }
 
 classes1 =()=> useStyles();
   
+handleOpenPopove=()=>
+{
+  this.setState({display:'block'})
+}
+handleClosePopove=()=>
+{
+  this.setState({display:'none'})
 
+}
 
 handleAllDetails=(event)=>
 {
@@ -143,6 +148,8 @@ handleAllDetails=(event)=>
 
       <NoSsr>
       <StyledTextField
+        onMouseOver={this.handleOpenPopove}
+        onMouseLeave={this.handleClosePopove}
         onChange={this.handleAllDetails}
         className='textField '
         label="Bio"
@@ -155,9 +162,8 @@ handleAllDetails=(event)=>
       />
       </NoSsr>
       
+       <div style={{display: this.state.display}} className='popText'>Let us know who you are <br></br>and where you're coming from, <br></br>what inspires you, who you<br></br>have worked with and what <br></br>you think is interesting about <br></br>your work in the world of music <br></br>and film, etc. How should we <br></br>presented you as an artist?</div>
        
-       
-          {/* <Typography className='popText'>Let us know who you are <br></br>and where you're coming from, <br></br>what inspires you, who you<br></br>have worked with and what <br></br>you think is interesting about <br></br>your work in the world of music <br></br>and film, etc. How should we <br></br>presented you as an artist?</Typography> */}
 
        <NoSsr>
           <StyledTextField

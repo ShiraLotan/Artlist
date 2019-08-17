@@ -1,5 +1,5 @@
 .submit{
-  width:48%;
+  width:48.5%;
   height:82%;
   background-color: rgb(54, 54, 54);
   font-family: 'Raleway', sans-serif;
@@ -75,12 +75,19 @@ left:60px;
   font-size: 12px;
 }
 .popText{
-  font-size: 12px !important;
-  color: white !important;
-  background-color: #181818 !important;
-  padding: 25px 12px;
-  border-radius: 4px !important;
-  font-family: 'Raleway', sans-serif !important;
-}
-
+  font-size: 9.5px;
+  text-align: left;
+  color: white;
+  line-height: 1.8;
+  background-color: #181818;
+  padding: 16px 12px 30px 12px;
+  border-radius: 4px;
+  font-family: 'Raleway', sans-serif;
+  position:absolute;
+  top:336px;
+  left:530px; 
+  width:140px;
+  height:120px;
+  border-radius: 3px;
+  }
 
