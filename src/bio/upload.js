@@ -36,7 +36,7 @@ function Upload(props) {
   const [allFiles , setFiles] = React.useState()
 
   const onDrop = useCallback(acceptedFiles => {
-      const newArrFile = [allFiles,...acceptedFiles]
+      const newArrFile = [...acceptedFiles]
       setFiles(newArrFile)
   }, [])
 

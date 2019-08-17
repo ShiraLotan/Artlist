@@ -71,21 +71,14 @@ state ={
   position: '',
   portfolio: '',
   registered: false,
-  anchorEl: null
+  anchorEl: null,
+  open: false
 }
 
 classes1 =()=> useStyles();
+  
 
- handlePopoverOpen=(event)=> {
-  this.setState({anchorEl:event.currentTarget.isConnected});
-  }
 
- handlePopoverClose=()=> {
-  this.setState({anchorEl:null});
-  }
-open(){ 
-  return Boolean(this.state.anchorEl);
-}
 handleAllDetails=(event)=>
 {
   this.setState({[event.target.name]: event.target.value})
@@ -93,6 +86,7 @@ handleAllDetails=(event)=>
 }
 
   render() {
+
   return (<div className="submit">
       <div className='all'>
       <h1 className='headFoot'>Submit your music</h1>
@@ -149,11 +143,6 @@ handleAllDetails=(event)=>
 
       <NoSsr>
       <StyledTextField
-        id="outlined-multiline-static"
-        aria-owns={this.state.anchorEl ? 'mouse-over-popover' : undefined}
-        aria-haspopup="true"
-        onMouseEnter={this.handlePopoverOpen}
-        onMouseLeave={this.handlePopoverClose}
         onChange={this.handleAllDetails}
         className='textField '
         label="Bio"
@@ -165,21 +154,10 @@ handleAllDetails=(event)=>
 
       />
       </NoSsr>
-
-        <Popover
-          id="mouse-over-popover"
-          className={this.classes1.popover} 
-          classes={{
-            paper: this.classes1.paper,
-          }}
-          anchorOrigin={{vertical:'center',horizontal: 550}}
-          open={this.open | undefined }
-          anchorEl={!this.state.anchorEl }
-          onClose={this.handlePopoverClose}
-          disableRestoreFocus
-        >
-          <Typography className='popText'>Let us know who you are <br></br>and where you're coming from, <br></br>what inspires you, who you<br></br>have worked with and what <br></br>you think is interesting about <br></br>your work in the world of music <br></br>and film, etc. How should we <br></br>presented you as an artist?</Typography>
-        </Popover>
+      
+       
+       
+          {/* <Typography className='popText'>Let us know who you are <br></br>and where you're coming from, <br></br>what inspires you, who you<br></br>have worked with and what <br></br>you think is interesting about <br></br>your work in the world of music <br></br>and film, etc. How should we <br></br>presented you as an artist?</Typography> */}
 
        <NoSsr>
           <StyledTextField
