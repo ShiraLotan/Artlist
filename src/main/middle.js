@@ -42,7 +42,7 @@ const Middle = ({ classes }) => {
         ]
   return (
     <div className="middle">
-      <Container  fixed>
+      <Container  >
         <h1 className='headerMiddle'>Join leading artists around the world</h1>
         {artists.map((art,i)=>
         <div key={i} className='imgWrapper'>

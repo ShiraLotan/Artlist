@@ -8,7 +8,7 @@ import './top.css';
 function Top() {
   return (
     <div className="top">
-      <Container  fixed>
+      <Container  >
         <div className='topCont'>
           <img  className='artlist' src={artlist} alt='#'/>
             <h1 className='header'>We want your inspiring music</h1>

@@ -1,11 +1,12 @@
 import React from 'react';
-import Dialog from '@material-ui/core/Dialog';
 import Slide from '@material-ui/core/Slide';
 import Submit from '../bio/submit';
 import './details.css';
 import X from '../img/X.png';
 import Fab from '@material-ui/core/Fab';
 import Upload from './upload';
+import StyledDialog from './details.Material.style';
+import {  NoSsr } from '@material-ui/core';
 
 
 const Transition = React.forwardRef(function Transition(props, ref) {
@@ -38,8 +39,8 @@ function handleClose() {
       <Fab color="primary" onClick={handleClickOpen}  className='startNow' variant="extended"  >
          Start Now
       </Fab> 
-
-      <Dialog fullScreen open={open} onClose={handleClose} TransitionComponent={Transition}>
+   <NoSsr>
+      <StyledDialog fullScreen open={open} onClose={handleClose} TransitionComponent={Transition}>
 
           <div className='dialogContent'>
             <img className='closeModalBut' src={X} alt='#' onClick={handleClose}/>
@@ -48,7 +49,8 @@ function handleClose() {
                 <Upload passedFormDetails={formDetails}/>
 
           </div>
-        </Dialog>
+        </StyledDialog>
+    </NoSsr>
     </div>
   );
 }
