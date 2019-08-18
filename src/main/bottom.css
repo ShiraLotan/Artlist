@@ -40,3 +40,36 @@ li{
   padding: 0 20px !important;
   margin: 20px 0 !important;
 }
+@media only screen and (max-width: 1165px) {
+  
+ .diskImage{
+   height: 300px;
+   width: 310px;
+   margin: 60px ;
+ }
+}
+@media only screen and (max-width: 890px) {
+  
+  .diskImage{
+    display: none;
+  }
+  .bottomSecContent{
+float: left; 
+left: 40px;
+ }
+ }
+ @media only screen and (max-width: 414px) {
+  
+li{
+  font-size: 10px;
+}
+ }
+ @media only screen and (max-width: 320px) {
+  .bottomSecContent{
+    left: 30px;
+  }
+  li{
+    font-size: 8px;
+  }
+ 
+}

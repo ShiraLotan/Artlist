@@ -65,6 +65,7 @@
   margin:9px;
 }
 .smallContent{
+  white-space: nowrap;
   position: relative;
   left:70px;
   text-align: left;
@@ -112,10 +113,10 @@ margin: auto;
     width:150px;
   }
   .imgWrapper{
-    margin:5px 5px;;
+    margin:5px 5px;
   }
   .yourThing{
-    margin:25px 10px 0 0;
+    margin:45px 0;
   }
   .title{
     top:10px;
@@ -128,8 +129,76 @@ margin: auto;
   .cardsWrapper{
     width: 600px;
   }
+  .smallContent{
+    left: 10px;
+  }
+  .yellowHeader{
+    left: 10px;
+    margin-left:0;
+  }
   
 }
+@media only screen and (max-width: 850px) {
+  .smallContent{
+    width:80px;
+    margin:0;
+  }
+  #paperHide{
+    display: none;
+  }
+}
+@media only screen and (max-width: 780px) {
+  .smallContent{
+    font-size: 10px;
+  }
+ 
+}
+@media only screen and (max-width: 690px) {
+  .imgContainer{
+    height: 80px;
+    width:70px;
+  }
+  .imgWrapper{
+    height: 80px;
+    width:70px;
+    margin:20px;
+  }
+  .title{
+    font-size: 13px;
+    left:.5px;
+  }
+  .artDetails{
+    display: none;
+  }
+  .headerMiddle{
+    margin-bottom:15px;
+  }
+  
+ 
+}
+@media only screen and (max-width: 850px) {
+  .smallContent{
+    width:80px;
+    margin:0;
+  }
+  #paperHide{
+    display: none;
+  }
+}
+@media only screen and (max-width: 411px) {
+  .smallContent{
+    font-size: 7px;
+  }
+ 
+}
+@media only screen and (max-width: 320px) {
+  .smallContent{
+    font-size: 5px;
+  }
+ 
+}
+
+
 
 
 
