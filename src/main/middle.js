@@ -57,7 +57,7 @@ const Middle = ({ classes }) => {
            )}
       </Container>
       <h1 className='yourThing'>Keep doing your thing</h1>
-      
+      <div className='cardsWrapper'>
       <Grid className='gridWrapper'  container spacing={3}>
         <Grid  item xs={3} >
           <Paper className={classes.papper} >
@@ -99,6 +99,7 @@ const Middle = ({ classes }) => {
             </Paper>
         </Grid>
       </Grid>
+      </div>
     </div>
   );
 }

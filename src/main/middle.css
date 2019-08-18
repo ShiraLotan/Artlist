@@ -80,10 +80,8 @@
   border:none !important;
 }
 .gridWrapper{
-position: relative;
-left:180px;
-width:1050px !important;
-margin: 0 !important; 
+  position: relative;
+  left:80px;
 }
 .gridWrapperBottom{
   margin-bottom: 40px !important;
@@ -94,7 +92,44 @@ margin: 0 !important;
   font-size: 38px;
   font-weight: 800;
 }
-
+.cardsWrapper{
+width:1050px !important;
+margin: auto;
+}
+@media only screen and (max-width: 1000px) {
+  .imgContainer {
+    height:200px;
+  }
+  .gridWrapper{
+    width:100%;
+    float:left;
+    left:0;
+  }
+}
+@media only screen and (max-width: 850px) {
+  .imgContainer {
+    height:170px;
+    width:150px;
+  }
+  .imgWrapper{
+    margin:5px 5px;;
+  }
+  .yourThing{
+    margin:25px 10px 0 0;
+  }
+  .title{
+    top:10px;
+    right: 25px;
+  }
+  .artDetails{
+    top:10px;
+    right:10px;
+  }
+  .cardsWrapper{
+    width: 600px;
+  }
+  
+}
 
 
 

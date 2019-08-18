@@ -46,30 +46,38 @@
   width:550px;
 }
 .artlist{
-  position: relative;
-  bottom: 130px;
+  float:left;
   height:20px;
   right:140px;
+  margin:20px;
 }
 @media only screen and (max-width: 960px) {
   .top{
     height:400px;
   }
   .topimage{
-   display: none;
+    display: none;
   }
   .header{
     width:100%;
-    font-size: 30px;
+    font-size: 50px;
+    text-align: center;
+    margin-top:20px;
+  }
+  .secondRow{
+    width: 100%;
+    text-align: center;
+    margin:auto;
   }
   .topCont{
-    right:300px;
+    position: absolute;
+    top:25%;  
+  }
+  .downloadButton{
+margin: 0 25%;
   }
  
 }
 @media only screen and (max-width: 870px) {
-  .downloadButton{
-    left:100%;
-    bottom: 100px;
-  }
+  
 }
